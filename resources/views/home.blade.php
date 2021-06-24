@@ -14,20 +14,10 @@
 
     <section>
 
-        @foreach($movies as $movie){
+    <h1>Welcome</h1>
 
-            <div class="card">
-                <ul>
-                    <li><h1>{{ $movie['title']}}</h1></li>
-                    <li><h3>{{ $movie['original_title']}}</h3></li>
-                    <li>{{$movie['nationality']}}</li>
-                    <li>{{$movie['date']}}</li>
-                    <li>{{$movie['vote']}}</li>
-                </ul>
-            </div>
-        }
+    <a href="{{route('movies')}}">MOVIES</a>
 
-        @endforeach
     </section>
 
 </body>

@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', 'homeController@index')->name('home');
+Route::get('/', 'homeController@index')->name('home');
 
+Route::get('/movies', 'moviesController@getAllMovies')->name('movies');
+
+Route::get('/movies/{id}', 'moviesController@SingleMovie')->name('singleMovie');
 
