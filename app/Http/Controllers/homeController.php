@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Movie;
 use Illuminate\Http\Request;
 
 class homeController extends Controller
 {
-    function index (){
-        return view ('welcome');
+    public function index() {
+        
+        $dataMovie = [
+          "movies" => Movie::all()
+        ];
+
+        return view("home", $dataMovie);
     }
 }
