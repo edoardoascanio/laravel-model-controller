@@ -16,7 +16,7 @@ class CreateVoyagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('voyages', function (Blueprint $table) {
+        Schema::create('travels', function (Blueprint $table) {
             $table->integer("id")->autoIncrement();
             $table->date("data_arrivo");
             $table->date("data_partenza");
@@ -34,8 +34,16 @@ class CreateVoyagesTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
-        Schema::dropIfExists('voyages');
-    }
-}
+    public function down(){
+        Schema::table('travels', function (Blueprint $table) {
+            $table->dropColumn("id");
+            $table->dropColumn("data_arrivo");
+            $table->dropColumn("data_partenza");
+            $table->dropColumn("totale_notti");
+            $table->dropColumn("persone");
+            $table->dropColumn("hotel");
+            $table->dropColumn("descrizione"); 
+            $table->dropColumn("prezzo_totale"); 
+        });
+    } 
+}      
